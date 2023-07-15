@@ -1,0 +1,12 @@
+        *************** Beginning of data ************************************* 
+0001.00 HDEBUG(*YES)                                                            
+0002.00 HOPTION(*NODEBUGIO)                                                     
+0003.00  *                                                                      
+0004.00 C/EXEC SQL                                                              
+0005.00 C+ update student                                                       
+0006.00 c+ set name = 'test12345'                                               
+0007.00 C+ where  id = 555555555                                                
+0008.00 C/END-EXEC                                                              
+0009.00  *                                                                      
+0010.00 c                   seton                                        lr     
+        ****************** End of data **************************************** 
