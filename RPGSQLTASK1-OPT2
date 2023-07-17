@@ -1,0 +1,12 @@
+        *************** Beginning of data *************************************
+0000.01 HDEBUG(*YES)                                                           
+0000.02 HOPTION(*NODEBUGIO)                                                    
+0001.00 Dtest             S             15                                     
+0002.01 C*                                                                     
+0003.00 C/EXEC SQL                                                             
+0004.00 C+ SELECT NAME INTO :test FROM jbltd101/STUDENT1 WHERE id = 301447818  
+0006.00 C/END-EXEC                                                             
+0007.00 C*                                                                     
+0008.00 C     test          DSPLY                                              
+0009.00 C                   SETON                                        LR    
+        ****************** End of data ****************************************
