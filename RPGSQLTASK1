@@ -1,0 +1,12 @@
+        *************** Beginning of data *************************************
+0001.00 DNAMETEST         S             15                                     
+0002.00 DIDTEST           S              9  0 INZ(301447819)                   
+0002.01 C*                                                                     
+0003.00 C/EXEC SQL                                                             
+0004.00 C+  SELECT NAME INTO :NAMETEST FROM STUDENT1                           
+0005.00 C+  WHERE ID = :IDTEST                                                 
+0006.00 C/END-EXEC                                                             
+0007.00 C*                                                                     
+0008.00 C     NAMETEST      DSPLY                                              
+0009.00 C                   SETON                                        LR    
+        ****************** End of data ****************************************
