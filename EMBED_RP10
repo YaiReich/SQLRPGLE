@@ -1,0 +1,36 @@
+        *************** Beginning of data *************************************
+0001.00 HDEBUG(*YES)                                                           
+0002.00 HOPTION(*NODEBUGIO)                                                    
+0003.00  *                                                                     
+0004.00                                                                        
+0005.00 d$pnameVal        s             12a   inz('B0440_1_1')                 
+0006.00 d$pnumVal         s             12a   inz('B0440_1_2')                 
+0007.00 d$paddrVal        s             12a   inz('B0440_1_3')                 
+0008.00 d$opnddVal        s              4s 0 inz(200)                         
+0009.00 d$opnmmVal        s              4s 0 inz(201)                         
+0010.00 d$opnyyVal        s              4s 0 inz(202)                         
+0011.00 d$opnstsVal       s              4s 0 inz(203)                         
+0012.00 d$sqlstmt1        s           1000a                                    
+0013.00 d$rowsDeleted     s             10s 0                                  
+0014.00                                                                        
+0015.00 d$quotes          c                   const('''')                      
+0016.00                                                                        
+0017.00    $sqlstmt1 = 'delete from jbltd11/partyd ' +                       
+0018.00                'where pnum = ' + $quotes + %trim($pnumVal) + $quotes;
+0019.00                                                                      
+0020.00     exec sql                                                         
+0021.00        set option commit=*none;                                      
+0022.00                                                                      
+0023.00     exec sql                                                         
+0024.00        execute immediate :$sqlstmt1;                                 
+0025.00                                                                      
+0026.00     if (sqlcod < 0) ;                                                
+0027.00        dsply ('sqlcod = ' + %char(sqlcod)) ;                         
+0028.00     endif ;                                                          
+0029.00                                                                      
+0030.00     exec sql GET DIAGNOSTICS :$rowsDeleted = ROW_COUNT ;             
+0031.00     dsply ('No. of records Deleted = ' +                             
+0032.00                           %trim(%editc($rowsDeleted:'Z')) );         
+0033.00                                                                        
+0034.00     *inlr = *on;                                                       
+        ****************** End of data ****************************************
